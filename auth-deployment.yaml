@@ -1,5 +1,6 @@
 apiVersion: apps/v1
 kind: Deployment
+
 metadata:
   name: auth-service
   namespace: tracking-app
@@ -15,6 +16,12 @@ spec:
     metadata:
       labels:
         app: auth-service
+
+    spec:
+      containers:
+        - name: auth-service
+          # temporary valid image
+          image: nginx:latest
 
           imagePullPolicy: Always
 
